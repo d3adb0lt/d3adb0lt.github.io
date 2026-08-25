@@ -1,7 +1,6 @@
 :root {
     --body-width: 600px;
 }
-
 html {
     font-size: 10px;
     font-family: "Jacquarda Bastarda 9", serif;
@@ -27,23 +26,32 @@ body {
     width: var(--body-width);
     height: 700px;
     margin: 0 auto;
-    background-color: #cd9d01;
+    background-color: goldenrod;
     padding: 0 20px 20px 20px;
-    border: 6px solid black;
+    border: 4px solid black;
     border-radius: 25%;
 }
 .headshot {
     display: block;
     margin: auto;
-    width: 200px;
-    height: 200px;
+    border: 2px solid gold;
+    width: 240px;
+    height: 240px;
     object-fit: cover;
     object-position: center 45%;
     border-radius: 50%;
 }
+.contact-logo1 {
+    margin: 10px 42.5px 5px 185px;
+    width: calc(var(--body-width) * .075);
+    height: calc(var(--body-width) * .075);
+}
 .contact-logo {
-    display: flexbox;
-    gap: 20px;
-    width: calc(var(--body-width) * .1);
-    height: calc(var(--body-width) * .1);
+    margin: 10px 42.5px 5px 0px;
+    width: calc(var(--body-width) * .075);
+    height: calc(var(--body-width) * .075);
+}
+.done {
+    color: greenyellow;
+    text-decoration: underline wavy black 2px;
 }
