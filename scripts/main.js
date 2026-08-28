@@ -1,7 +1,7 @@
 const listItems = document.querySelectorAll("li");
 // store ref to the <h1>
 const heading = document.querySelector("h1");
-const image = document.querySelector("img");
+const headshot = document.querySelector(".headshot");
 
 function toggleDone(e) {
     if (!e.target.className) {
@@ -16,11 +16,35 @@ listItems.forEach((item) => {
 listItems.forEach((item) => {
     item.addEventListener("mouseleave", toggleDone);
 });
-image.addEventListener("click", () => {
-    const src = image.getAttribute("src");
+headshot.addEventListener("click", () => {
+    const src = headshot.getAttribute("src");
     if (src == "images/headshots/kel&nelson.png") {
-        image.setAttribute("src", "images/gosling factor.jpg");
+        headshot.setAttribute("src", "images/gosling factor.jpg");
     } else {
-        image.setAttribute("src", "images/headshots/kel&nelson.png");
+        headshot.setAttribute("src", "images/headshots/kel&nelson.png");
     }
+});
+
+let myButton = document.querySelector("button");
+let myHeading = document.querySelector("h1");
+
+function setUserName() {
+    const myName = prompt("Please enter your name.");
+    if (!myName) {
+        setUserName();
+    } else {
+        localStorage.setItem("name", myName);
+        myHeading.textContent = `Mozilla is cool, ${myName}`;
+    }
+}
+
+if (!localStorage.getItem("name")) {
+    setUserName();
+} else {
+    const storedName = localStorage.getItem("name");
+    myHeading.textContent = `Mozilla is cool, ${storedName}`;
+}
+
+myButton.addEventListener("click", () => {
+    setUserName();
 });
