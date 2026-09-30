@@ -51,7 +51,3 @@ body {
     width: calc(var(--body-width) * .075);
     height: calc(var(--body-width) * .075);
 }
-.done {
-    color: greenyellow;
-    text-decoration: underline wavy black 2px;
-}
